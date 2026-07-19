@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10261f">
+  <meta name="description" content="Camila in Wonderland — A magical 15th birthday celebration on September 11, 2026.">
+  <title>Camila in Wonderland</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Italiana&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="intro" class="intro">
+    <div class="book-cover" role="dialog" aria-labelledby="book-title">
+      <div class="book-ornament">✦</div>
+      <p class="eyebrow">A very important invitation</p>
+      <h1 id="book-title">Camila in Wonderland</h1>
+      <p class="book-subtitle">Open the storybook and follow the White Rabbit.</p>
+      <button id="enterWonderland" class="primary-button">Enter Wonderland</button>
+      <p class="small-note">Turn your sound on when the trailer begins.</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home">Camila in Wonderland</a>
+    <button class="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav">
+      <a href="#invitation">Invitation</a>
+      <a href="#trailer">Trailer</a>
+      <a href="#details">Details</a>
+      <a href="#dress-code">Dress Code</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <div class="watch" aria-hidden="true">
+          <span class="watch-loop"></span>
+          <span class="hand hour"></span>
+          <span class="hand minute"></span>
+          <span class="hand second"></span>
+        </div>
+        <p class="eyebrow">Don't be late for</p>
+        <h2>A Very Important Date</h2>
+        <p class="hero-copy">The White Rabbit has led you here. Step through the keyhole and enter Camila's Wonderland.</p>
+        <a class="primary-button" href="#invitation">Begin the Journey</a>
+      </div>
+    </section>
+
+    <section id="invitation" class="invitation section light-section">
+      <div class="flower flower-one" aria-hidden="true">✿</div>
+      <div class="flower flower-two" aria-hidden="true">❀</div>
+
+      <div class="invitation-card reveal">
+        <p class="eyebrow dark">You're invited to celebrate</p>
+        <h2>Camila's</h2>
+        <h3>15th Birthday</h3>
+        <p class="tea-party">A Wonderland Tea Party</p>
+
+        <div class="event-grid">
+          <article>
+            <span>Date</span>
+            <strong>September 11, 2026</strong>
+          </article>
+          <article>
+            <span>Time</span>
+            <strong>7:30 PM</strong>
+          </article>
+          <article>
+            <span>Location</span>
+            <strong>Club of Knights<br>Coral Gables, Florida</strong>
+          </article>
+        </div>
+
+        <a class="primary-button" href="#rsvp">Respond to the Invitation</a>
+      </div>
+    </section>
+
+    <section id="trailer" class="trailer section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Chapter One</p>
+        <h2>Follow the White Rabbit</h2>
+        <p>Your save-the-date trailer belongs here.</p>
+      </div>
+
+      <div class="video-shell reveal">
+        <video controls playsinline preload="metadata" poster="assets/trailer-poster.svg">
+          <source src="assets/trailer.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+
+      <p class="trailer-help reveal">
+        The site is ready for your movie. Add your final video to the <strong>assets</strong> folder and name it <strong>trailer.mp4</strong>.
+      </p>
+    </section>
+
+    <section id="details" class="details section light-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow dark">Everything you need</p>
+        <h2>Prepare for Wonderland</h2>
+      </div>
+
+      <div class="detail-cards">
+        <article class="detail-card reveal">
+          <div class="icon">⌚</div>
+          <h3>Countdown</h3>
+          <div class="countdown" aria-live="polite">
+            <div><strong id="days">--</strong><span>Days</span></div>
+            <div><strong id="hours">--</strong><span>Hours</span></div>
+            <div><strong id="minutes">--</strong><span>Minutes</span></div>
+          </div>
+        </article>
+
+        <article class="detail-card reveal">
+          <div class="icon">⌖</div>
+          <h3>Directions</h3>
+          <p>Club of Knights<br>Coral Gables, Florida</p>
+          <a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Club%20of%20Knights%20Coral%20Gables%20Florida">Open in Maps →</a>
+        </article>
+
+        <article class="detail-card reveal">
+          <div class="icon">♡</div>
+          <h3>Add to Calendar</h3>
+          <p>Save this very important date on your phone.</p>
+          <button id="calendarButton" class="text-link">Add Event →</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="dress-code" class="dress-code section">
+      <div class="dress-copy reveal">
+        <p class="eyebrow">Dress Code</p>
+        <h2>Wonderland Elegance</h2>
+        <p>Elegant cocktail or formal attire inspired by an enchanted garden tea party.</p>
+
+        <div class="palette" aria-label="Suggested color palette">
+          <span class="sage" title="Sage green"></span>
+          <span class="blue" title="Powder blue"></span>
+          <span class="lavender" title="Lavender"></span>
+          <span class="blush" title="Soft blush"></span>
+          <span class="gold" title="Antique gold"></span>
+        </div>
+
+        <p class="dress-note">Soft florals, jewel tones, sage green, blue, lavender, blush, ivory, and gold are welcome.</p>
+      </div>
+
+      <div class="checker-card reveal" aria-hidden="true">
+        <span>♠</span><span>♥</span><span>♦</span><span>♣</span>
+      </div>
+    </section>
+
+    <section id="rsvp" class="rsvp section light-section">
+      <div class="rsvp-card reveal">
+        <p class="eyebrow dark">The Mad Hatter asks...</p>
+        <h2>Will you be joining us for tea?</h2>
+
+        <form name="camila-rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="camila-rsvp">
+          <p class="hidden">
+            <label>Do not fill this out: <input name="bot-field"></label>
+          </p>
+
+          <label>
+            Guest name
+            <input type="text" name="guest-name" required>
+          </label>
+
+          <label>
+            Will you attend?
+            <select name="attendance" required>
+              <option value="">Choose one</option>
+              <option>Absolutely, I will be there!</option>
+              <option>Sadly, I cannot attend.</option>
+            </select>
+          </label>
+
+          <label>
+            Number of guests attending
+            <input type="number" name="guest-count" min="0" max="10" value="1">
+          </label>
+
+          <label>
+            Message for Camila
+            <textarea name="message" rows="4"></textarea>
+          </label>
+
+          <button class="primary-button" type="submit">Send RSVP</button>
+        </form>
+
+        <p class="alternate-rsvp">
+          Prefer to RSVP by text?
+          <a href="sms:7865063292?body=RSVP%20for%20Camila%27s%2015th%20Birthday:%20Name%20-%20Number%20of%20Guests%20-%20Attending%20Yes%2FNo">Text 786-506-3292</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="gallery section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">A future chapter</p>
+        <h2>Memories from Wonderland</h2>
+        <p>This gallery can be opened after the celebration for photos and videos.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-placeholder reveal">Photo</div>
+        <div class="gallery-placeholder reveal">Photo</div>
+        <div class="gallery-placeholder reveal">Video</div>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <div class="closing-content reveal">
+        <p class="eyebrow">The story continues...</p>
+        <h2>We're all mad here.</h2>
+        <p>We cannot wait to celebrate this very important date with you.</p>
+        <strong>September 11, 2026</strong>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Camila in Wonderland · September 11, 2026
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
