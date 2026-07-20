@@ -2,19 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
-  <meta name="theme-color" content="#0d241a">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2418">
 
   <title>Camila’s Wonderland</title>
 
   <meta
     name="description"
-    content="Camila’s magical fifteenth birthday celebration on September 11, 2026."
+    content="Camila’s magical fifteenth birthday celebration — September 11, 2026."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,20 +22,17 @@
 
   <style>
     :root {
-      --forest: #0d241a;
-      --forest-light: #193d2b;
-      --forest-soft: #31533d;
-      --burgundy: #651e32;
-      --wine: #822f47;
-      --gold: #cba75d;
-      --gold-light: #ecd99e;
+      --forest: #0b2418;
+      --forest-light: #214733;
+      --burgundy: #681f35;
+      --wine: #8b4055;
+      --gold: #c9a45a;
+      --gold-light: #ecd89f;
       --ivory: #fff8e9;
-      --sage: #93a57f;
-      --powder-blue: #b8d1e2;
-      --lavender: #a891b8;
-      --blush: #c98e9b;
+      --sage: #93a77d;
+      --blue: #b8d2e4;
+      --lavender: #aa96ba;
       --ink: #26372e;
-      --shadow: rgba(0, 0, 0, 0.45);
     }
 
     * {
@@ -53,10 +45,10 @@
 
     body {
       margin: 0;
-      overflow-x: hidden;
       color: var(--ivory);
       background: var(--forest);
       font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
     }
 
     body.locked {
@@ -65,8 +57,7 @@
 
     h1,
     h2,
-    h3,
-    .brand {
+    h3 {
       font-family: "Cormorant Garamond", serif;
     }
 
@@ -81,75 +72,39 @@
       font: inherit;
     }
 
-    .hidden {
-      display: none;
-    }
-
     .section {
-      position: relative;
       min-height: 100vh;
-      padding: 105px 7vw 80px;
+      padding: 100px 7vw 75px;
+      position: relative;
       overflow: hidden;
     }
 
     .eyebrow {
-      margin: 0 0 14px;
+      margin: 0 0 12px;
       color: var(--gold-light);
       font-size: 11px;
-      letter-spacing: 0.28em;
+      letter-spacing: .27em;
       text-transform: uppercase;
     }
 
     .eyebrow.dark {
-      color: #745c29;
+      color: #765d28;
     }
 
-    .primary-button {
+    .button {
       display: inline-block;
       padding: 15px 28px;
       border: 1px solid var(--gold);
       border-radius: 999px;
       color: var(--ivory);
-      background:
-        linear-gradient(
-          135deg,
-          var(--burgundy),
-          var(--wine)
-        );
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.32);
+      background: linear-gradient(135deg, var(--burgundy), var(--wine));
+      box-shadow: 0 14px 35px rgba(0,0,0,.34);
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
     }
 
-    .primary-button:hover {
-      transform: translateY(-2px);
-    }
-
-    .text-link {
-      padding: 0;
-      border: 0;
-      color: #765a21;
-      background: none;
-      font-weight: 700;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* OPENING */
+    /* Opening */
 
     #opening {
       position: fixed;
@@ -159,32 +114,845 @@
       place-items: center;
       padding: 22px;
       background:
-        radial-gradient(
-          circle at center,
-          rgba(203, 167, 93, 0.16),
-          transparent 34%
-        ),
-        linear-gradient(
-          180deg,
-          #030906,
-          var(--forest)
-        );
-      transition:
-        opacity 1s ease,
-        visibility 1s ease;
+        radial-gradient(circle, rgba(201,164,90,.17), transparent 35%),
+        linear-gradient(180deg, #030806, var(--forest));
+      transition: opacity .9s ease, visibility .9s ease;
     }
 
-    #opening.opened {
+    #opening.open {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
     }
 
     .opening-card {
-      position: relative;
-      width: min(640px, 94vw);
-      min-height: 650px;
+      width: min(620px, 94vw);
+      min-height: 620px;
       display: grid;
       place-items: center;
-      padding: 60px 38px;
-      border: 3
+      padding: 45px 32px;
+      border: 3px solid var(--gold);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,.06), transparent 38%),
+        linear-gradient(145deg, #1b432f, #07170f);
+      box-shadow:
+        0 35px 100px rgba(0,0,0,.65),
+        inset 0 0 0 7px rgba(201,164,90,.14);
+      text-align: center;
+    }
+
+    .rabbit {
+      font-size: 92px;
+      filter: drop-shadow(0 0 22px rgba(201,164,90,.45));
+      animation: float 2.6s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      from { transform: translateY(-5px); }
+      to { transform: translateY(8px); }
+    }
+
+    .opening-card h1 {
+      margin: 12px 0;
+      color: var(--gold-light);
+      font-family: "Italiana", serif;
+      font-size: clamp(48px, 9vw, 88px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .opening-card h2 {
+      margin: 8px 0;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    .opening-card p {
+      max-width: 470px;
+      margin: 20px auto 28px;
+      color: #eadfca;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+
+    header {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 6vw;
+      border-bottom: 1px solid rgba(201,164,90,.28);
+      background: rgba(7,24,16,.86);
+      backdrop-filter: blur(14px);
+    }
+
+    header strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(201,164,90,.2), transparent 27%),
+        linear-gradient(145deg, #234d36, #07150e);
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    .watch {
+      position: relative;
+      width: 145px;
+      height: 145px;
+      margin: 0 auto 28px;
+      border: 10px solid var(--gold);
+      border-radius: 50%;
+      background: #f5e7c6;
+      box-shadow: 0 0 45px rgba(201,164,90,.5);
+      animation: swing 3s ease-in-out infinite alternate;
+    }
+
+    .watch::before {
+      content: "";
+      position: absolute;
+      top: -55px;
+      left: 41px;
+      width: 44px;
+      height: 44px;
+      border: 8px solid var(--gold);
+      border-radius: 50%;
+    }
+
+    .hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 3px;
+      background: #2c2115;
+      transform-origin: 0 50%;
+    }
+
+    .hour {
+      width: 34px;
+      transform: rotate(225deg);
+    }
+
+    .minute {
+      width: 48px;
+      transform: rotate(90deg);
+    }
+
+    @keyframes swing {
+      from { transform: rotate(-3deg); }
+      to { transform: rotate(3deg); }
+    }
+
+    .hero h2 {
+      margin: 10px 0 18px;
+      color: var(--gold-light);
+      font-family: "Italiana", serif;
+      font-size: clamp(54px, 9vw, 102px);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      line-height: 1.55;
+    }
+
+    /* Invitation */
+
+    .light {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(147,167,125,.35), transparent 27%),
+        radial-gradient(circle at 85% 80%, rgba(104,31,53,.18), transparent 28%),
+        var(--ivory);
+    }
+
+    .invitation {
+      display: grid;
+      place-items: center;
+    }
+
+    .card {
+      width: min(850px, 100%);
+      padding: 55px 38px;
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      background: rgba(255,255,255,.89);
+      box-shadow: 0 25px 70px rgba(38,56,47,.16);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin: 0;
+      color: var(--burgundy);
+      font-family: "Italiana", serif;
+      font-size: clamp(58px, 9vw, 96px);
+      font-weight: 400;
+    }
+
+    .card h3 {
+      margin: 0;
+      color: var(--forest);
+      font-size: 40px;
+    }
+
+    .subtitle {
+      color: #607653;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 38px 0;
+    }
+
+    .event-grid div {
+      padding: 20px;
+      border-top: 1px solid var(--gold);
+    }
+
+    .event-grid span {
+      display: block;
+      margin-bottom: 8px;
+      color: #745b28;
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .event-grid strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+    }
+
+    /* Details */
+
+    .heading {
+      max-width: 760px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .heading h2 {
+      margin: 8px 0;
+      font-size: clamp(46px, 7vw, 76px);
+    }
+
+    .details h2,
+    .rsvp h2 {
+      color: var(--forest);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .detail {
+      padding: 34px 22px;
+      border: 1px solid rgba(201,164,90,.58);
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 15px 38px rgba(38,56,47,.09);
+      text-align: center;
+    }
+
+    .detail .icon {
+      color: var(--burgundy);
+      font-size: 42px;
+    }
+
+    .detail h3 {
+      color: var(--forest);
+      font-size: 30px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .countdown div {
+      min-width: 68px;
+      padding: 12px 7px;
+      border-radius: 12px;
+      background: #f6edda;
+    }
+
+    .countdown strong,
+    .countdown span {
+      display: block;
+    }
+
+    .countdown strong {
+      color: var(--burgundy);
+      font-size: 25px;
+    }
+
+    .countdown span {
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    /* Dress Code */
+
+    .dress {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 7vw;
+      background:
+        radial-gradient(circle at 85% 30%, rgba(139,64,85,.25), transparent 27%),
+        linear-gradient(145deg, #315640, #10271d);
+    }
+
+    .dress h2 {
+      margin: 6px 0 18px;
+      color: var(--gold-light);
+      font-size: clamp(48px, 7vw, 76px);
+    }
+
+    .dress p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin: 28px 0;
+    }
+
+    .palette span {
+      width: 52px;
+      height: 52px;
+      border: 2px solid rgba(255,255,255,.72);
+      border-radius: 50%;
+    }
+
+    .palette span:nth-child(1) { background: var(--burgundy); }
+    .palette span:nth-child(2) { background: var(--wine); }
+    .palette span:nth-child(3) { background: var(--sage); }
+    .palette span:nth-child(4) { background: var(--blue); }
+    .palette span:nth-child(5) { background: var(--lavender); }
+    .palette span:nth-child(6) { background: var(--gold); }
+
+    .symbols {
+      min-height: 390px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 28px;
+      color: var(--gold-light);
+      background: rgba(0,0,0,.25);
+      font-size: 82px;
+    }
+
+    /* RSVP */
+
+    .rsvp {
+      display: grid;
+      place-items: center;
+    }
+
+    .rsvp-card {
+      width: min(720px, 100%);
+      padding: 45px;
+      border: 1px solid var(--gold);
+      border-radius: 28px;
+      background: white;
+      box-shadow: 0 22px 60px rgba(37,55,47,.14);
+    }
+
+    .rsvp-card h2,
+    .rsvp-card > p {
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      gap: 17px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #cbbb98;
+      border-radius: 12px;
+      background: #fffdf7;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .text-rsvp {
+      margin-top: 22px;
+      text-align: center;
+    }
+
+    .text-rsvp a {
+      color: var(--burgundy);
+      font-weight: 700;
+    }
+
+    .closing {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle, rgba(201,164,90,.16), transparent 30%),
+        linear-gradient(180deg, var(--forest), #06100b);
+    }
+
+    .closing h2 {
+      margin: 8px 0;
+      color: var(--gold-light);
+      font-size: clamp(50px, 8vw, 88px);
+    }
+
+    .closing p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+    }
+
+    footer {
+      padding: 28px;
+      color: #dcc99d;
+      background: #06100b;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .event-grid,
+      .detail-grid,
+      .dress {
+        grid-template-columns: 1fr;
+      }
+
+      .symbols {
+        min-height: 280px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .section {
+        padding: 90px 6vw 65px;
+      }
+
+      .opening-card,
+      .card,
+      .rsvp-card {
+        padding: 40px 21px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 52px;
+      }
+
+      .countdown div {
+        min-width: 61px;
+      }
+
+      .symbols {
+        font-size: 58px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="opening">
+    <div class="opening-card">
+      <div>
+        <div class="rabbit">🐇</div>
+
+        <p class="eyebrow">
+          A very important invitation
+        </p>
+
+        <h1>Follow the White Rabbit</h1>
+
+        <h2>Camila’s Wonderland</h2>
+
+        <p>
+          Every story begins with curiosity. Follow the White Rabbit
+          into a magical celebration where time pauses at half past seven.
+        </p>
+
+        <button id="enter" class="button">
+          Enter Wonderland
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <strong>Camila’s Wonderland</strong>
+
+    <nav>
+      <a href="#invitation">Invitation</a>
+      <a href="#details">Details</a>
+      <a href="#dress">Dress Code</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <div class="watch">
+          <span class="hand hour"></span>
+          <span class="hand minute"></span>
+        </div>
+
+        <p class="eyebrow">Don’t be late for</p>
+
+        <h2>A Very Important Date</h2>
+
+        <p>
+          The White Rabbit has led you here. Step through the keyhole
+          and enter Camila’s Wonderland.
+        </p>
+
+        <a class="button" href="#invitation">
+          Continue the Story
+        </a>
+      </div>
+    </section>
+
+    <section class="invitation light section" id="invitation">
+      <div class="card">
+        <p class="eyebrow dark">
+          You are invited to celebrate
+        </p>
+
+        <h2>Camila’s</h2>
+        <h3>15th Birthday</h3>
+
+        <p class="subtitle">
+          An Enchanted Wonderland Celebration
+        </p>
+
+        <div class="event-grid">
+          <div>
+            <span>Date</span>
+            <strong>September 11, 2026</strong>
+          </div>
+
+          <div>
+            <span>Time</span>
+            <strong>7:30 PM</strong>
+          </div>
+
+          <div>
+            <span>Location</span>
+            <strong>
+              Club of Knights<br>
+              Coral Gables, Florida
+            </strong>
+          </div>
+        </div>
+
+        <a class="button" href="#rsvp">
+          Join the Queen’s Guest List
+        </a>
+      </div>
+    </section>
+
+    <section class="details light section" id="details">
+      <div class="heading">
+        <p class="eyebrow dark">Everything you need</p>
+        <h2>Prepare for Wonderland</h2>
+      </div>
+
+      <div class="detail-grid">
+
+        <article class="detail">
+          <div class="icon">⌚</div>
+          <h3>Countdown</h3>
+
+          <div class="countdown">
+            <div>
+              <strong id="days">--</strong>
+              <span>Days</span>
+            </div>
+
+            <div>
+              <strong id="hours">--</strong>
+              <span>Hours</span>
+            </div>
+
+            <div>
+              <strong id="minutes">--</strong>
+              <span>Minutes</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="detail">
+          <div class="icon">⌖</div>
+          <h3>Find Your Way</h3>
+
+          <p>
+            Club of Knights<br>
+            Coral Gables, Florida
+          </p>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Club%20of%20Knights%20Coral%20Gables%20Florida"
+            target="_blank"
+            rel="noopener"
+            style="color:#681f35;font-weight:700;text-decoration:none"
+          >
+            Open in Maps →
+          </a>
+        </article>
+
+        <article class="detail">
+          <div class="icon">♡</div>
+          <h3>Save the Date</h3>
+
+          <p>
+            September 11, 2026<br>
+            7:30 PM
+          </p>
+
+          <a
+            href="#rsvp"
+            style="color:#681f35;font-weight:700;text-decoration:none"
+          >
+            RSVP Now →
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="dress section" id="dress">
+      <div>
+        <p class="eyebrow">Dress Code</p>
+
+        <h2>Wonderland Elegance</h2>
+
+        <p>
+          Semi-formal or formal attire with a touch of enchanted garden elegance.
+        </p>
+
+        <div class="palette">
+          <span title="Burgundy"></span>
+          <span title="Wine"></span>
+          <span title="Sage green"></span>
+          <span title="Powder blue"></span>
+          <span title="Lavender"></span>
+          <span title="Antique gold"></span>
+        </div>
+
+        <p>
+          Burgundy, wine, forest green, sage, lavender,
+          powder blue, antique gold, blush, and ivory are welcome.
+        </p>
+      </div>
+
+      <div class="symbols">
+        <span>♠</span>
+        <span>♥</span>
+        <span>♦</span>
+        <span>♣</span>
+      </div>
+    </section>
+
+    <section class="rsvp light section" id="rsvp">
+      <div class="rsvp-card">
+
+        <p class="eyebrow dark">
+          The Queen requests your reply
+        </p>
+
+        <h2>The Queen’s Guest List</h2>
+
+        <form
+          name="camila-rsvp"
+          method="POST"
+          data-netlify="true"
+          action="/thank-you.html"
+        >
+          <input
+            type="hidden"
+            name="form-name"
+            value="camila-rsvp"
+          >
+
+          <label>
+            Guest name
+            <input
+              type="text"
+              name="guest-name"
+              required
+            >
+          </label>
+
+          <label>
+            Will you be joining us?
+            <select name="attendance" required>
+              <option value="">Choose one</option>
+
+              <option>
+                Delightfully accepts — I’ll be there!
+              </option>
+
+              <option>
+                Regretfully declines — Sending love from afar.
+              </option>
+            </select>
+          </label>
+
+          <label>
+            Number of guests attending
+            <input
+              type="number"
+              name="guest-count"
+              min="0"
+              max="10"
+              value="1"
+            >
+          </label>
+
+          <label>
+            Message for Camila
+            <textarea
+              name="message"
+              rows="4"
+            ></textarea>
+          </label>
+
+          <button class="button" type="submit">
+            Send My Reply
+          </button>
+        </form>
+
+        <p class="text-rsvp">
+          Prefer to RSVP by text?
+          <a
+            href="sms:7865063292?body=RSVP%20for%20Camila%27s%2015th%20Birthday:%20Name%20-%20Number%20of%20Guests%20-%20Attending%20Yes%2FNo"
+          >
+            Text 786-506-3292
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <div>
+        <p class="eyebrow">The story continues...</p>
+
+        <h2>See You in Wonderland</h2>
+
+        <p>
+          We cannot wait to celebrate this very important date with you.
+        </p>
+
+        <strong>
+          September 11, 2026 · 7:30 PM
+        </strong>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Camila’s Wonderland · September 11, 2026
+  </footer>
+
+  <script>
+    const opening = document.getElementById("opening");
+    const enter = document.getElementById("enter");
+
+    document.body.classList.add("locked");
+
+    enter.addEventListener("click", function () {
+      opening.classList.add("open");
+      document.body.classList.remove("locked");
+    });
+
+    const eventDate =
+      new Date("2026-09-11T19:30:00-04:00");
+
+    function updateCountdown() {
+      const difference =
+        Math.max(0, eventDate.getTime() - Date.now());
+
+      document.getElementById("days").textContent =
+        Math.floor(difference / 86400000);
+
+      document.getElementById("hours").textContent =
+        Math.floor((difference % 86400000) / 3600000);
+
+      document.getElementById("minutes").textContent =
+        Math.floor((difference % 3600000) / 60000);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
+
+</body>
+</html>
