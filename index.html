@@ -19,7 +19,93 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Italiana&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
+/* CINEMATIC OPENING */
+#wonderlandIntro {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #07130e;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
 
+#wonderlandIntro.intro-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#wonderlandIntro video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.42)),
+    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.35));
+}
+
+.intro-content {
+  position: absolute;
+  left: 50%;
+  bottom: max(8vh, 55px);
+  transform: translateX(-50%);
+  width: min(90%, 520px);
+  text-align: center;
+  color: #f7e7b0;
+  padding: 24px;
+}
+
+.intro-content h1 {
+  margin: 0 0 8px;
+  font-family: "Italiana", serif;
+  font-size: clamp(34px, 7vw, 66px);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 18px rgba(0,0,0,.85);
+}
+
+.intro-content p {
+  margin: 0 0 22px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(18px, 3.5vw, 25px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,.9);
+}
+
+#enterWonderland {
+  appearance: none;
+  border: 1px solid #d9b96e;
+  border-radius: 999px;
+  padding: 15px 29px;
+  background: rgba(25, 10, 13, .78);
+  color: #f8e8b7;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.45),
+    inset 0 0 18px rgba(217,185,110,.12);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+#enterWonderland:active {
+  transform: scale(.97);
+}
+
+body.intro-active {
+  overflow: hidden;
+}
+``
   <style>
     :root {
       --forest: #0b2418;
