@@ -28,14 +28,25 @@ section{padding:78px 22px}.wrap{max-width:1050px;margin:auto}.section-title{text
 footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font-family:"Cormorant Garamond",serif;font-size:18px}
 @media(max-width:760px){.nav nav{display:none}.grid{grid-template-columns:1fr}.countdown{grid-template-columns:repeat(2,1fr)}section{padding:60px 18px}.invite-card{padding:38px 20px}.intro-copy{margin-bottom:9vh}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-#openingVideo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
+#intro{
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100svh;
+    overflow:hidden;
+    background:#050b08;
+    z-index:9999;
+}
+
+#openingVideo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    background:#050b08;
+    z-index:1;
 }
 
 #intro::after {
@@ -144,9 +155,9 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
     Play Intro
   </button>
 
-  <button class="skip-intro" id="enterBtn" type="button">
-    Skip Intro
-  </button>
+ <button class="skip-intro" id="enterBtn" type="button">
+    Enter Wonderland
+</button>
 </div>
 </div>
 <header><div class="nav"><div class="brand">Camila's Wonderland</div><nav><a href="#invitation">Invitation</a><a href="#details">Details</a><a href="#dress">Dress Code</a><a href="#rsvp">RSVP</a></nav></div></header>
