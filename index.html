@@ -122,18 +122,21 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
 }
 
 .skip-intro {
-  position: absolute;
-  right: 22px;
-  bottom: 22px;
-  padding: 10px 16px;
-  border: 1px solid rgba(255, 244, 220, 0.45);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.48);
-  color: #fff4dc;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
-  cursor: pointer;
-  pointer-events: auto;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    padding: 14px 30px;
+    border: 2px solid #d9b85f;
+    border-radius: 999px;
+    background: rgba(64, 8, 24, 0.90);
+    color: #fff4dc;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(18px, 2vw, 24px);
+    letter-spacing: .06em;
+    cursor: pointer;
+    pointer-events: auto;
+    animation: invitationGlow 2.8s ease-in-out infinite;
 }
 </style>
 </head>
