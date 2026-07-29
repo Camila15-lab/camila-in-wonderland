@@ -28,13 +28,49 @@ section{padding:78px 22px}.wrap{max-width:1050px;margin:auto}.section-title{text
 footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font-family:"Cormorant Garamond",serif;font-size:18px}
 @media(max-width:760px){.nav nav{display:none}.grid{grid-template-columns:1fr}.countdown{grid-template-columns:repeat(2,1fr)}section{padding:60px 18px}.invite-card{padding:38px 20px}.intro-copy{margin-bottom:9vh}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+#openingVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+#intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+.intro-copy {
+  position: relative;
+  z-index: 2;
+}
 </style>
 </head>
 <body class="locked">
 <div id="intro" aria-label="Camila's Wonderland opening">
- <img id="openingPoster"
-     src="opening-rabbit.PNG"
-     alt="Follow the White Rabbit">
+<video
+  id="openingVideo"
+  autoplay
+  muted
+  playsinline
+  loop
+  poster="opening-rabbit.PNG"
+  aria-label="Follow the White Rabbit"
+>
+  <source src="opening-rabbit.mp4" type="video/mp4">
+</video>
   <div class="intro-copy">
     <p>A very important invitation</p>
     <button class="btn" id="enterBtn" type="button">Enter Wonderland</button>
