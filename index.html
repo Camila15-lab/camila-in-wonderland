@@ -152,38 +152,21 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
 <footer>See you in Wonderland<br><small>September 11, 2026 · 7:30 PM</small></footer>
 <script>
 (function () {
-  const intro = document.getElementById("intro");
-  const video = document.getElementById("openingVideo");
-  const playButton = document.getElementById("playIntroBtn");
-  const skipButton = document.getElementById("enterBtn");
+const intro = document.getElementById("intro");
+const enterButton = document.getElementById("enterBtn");
 
-  function enterWonderland() {
-    intro.classList.add("hide");
-    document.body.classList.remove("locked");
+function enterWonderland() {
+  intro.classList.add("hide");
+  document.body.classList.remove("locked");
 
-    setTimeout(function () {
-      video.pause();
-      intro.remove();
-    }, 1000);
+  setTimeout(function () {
+    intro.remove();
+  }, 1000);
 
-    window.scrollTo(0, 0);
-  }
+  window.scrollTo(0, 0);
+}
 
-  function startVideo() {
-    video.play()
-      .then(function () {
-        playButton.style.display = "none";
-      })
-      .catch(function () {
-        playButton.style.display = "inline-flex";
-      });
-  }
-
-  playButton.addEventListener("click", startVideo);
-  skipButton.addEventListener("click", enterWonderland);
-  video.addEventListener("ended", enterWonderland);
-
-  startVideo();
+enterButton.addEventListener("click", enterWonderland);  
 
   const target = new Date("2026-09-11T19:30:00-04:00").getTime();
 
