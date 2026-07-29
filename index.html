@@ -93,6 +93,37 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
 #enterBtn {
   animation: invitationGlow 2.8s ease-in-out infinite;
 }
+  .intro-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+#playIntroBtn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  pointer-events: auto;
+  animation: invitationGlow 2.8s ease-in-out infinite;
+}
+
+.skip-intro {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 244, 220, 0.45);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.48);
+  color: #fff4dc;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  cursor: pointer;
+  pointer-events: auto;
+}
 </style>
 </head>
 <body class="locked">
@@ -109,21 +140,13 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
   <source src="opening-rabbit.mp4" type="video/mp4">
 </video>
  <div class="intro-copy">
+  <button class="btn" id="playIntroBtn" type="button">
+    Play Intro
+  </button>
 
-    <p class="intro-small">
-        A very important invitation has found you
-    </p>
-
-    <h1>Follow the White Rabbit</h1>
-
-    <p class="intro-text">
-        Your journey into Camila's Wonderland begins here.
-    </p>
-
-    <button class="btn" id="enterBtn" type="button">
-        Begin the Journey
-    </button>
-
+  <button class="skip-intro" id="enterBtn" type="button">
+    Skip Intro
+  </button>
 </div>
 </div>
 <header><div class="nav"><div class="brand">Camila's Wonderland</div><nav><a href="#invitation">Invitation</a><a href="#details">Details</a><a href="#dress">Dress Code</a><a href="#rsvp">RSVP</a></nav></div></header>
@@ -136,13 +159,60 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
 </main>
 <footer>See you in Wonderland<br><small>September 11, 2026 · 7:30 PM</small></footer>
 <script>
-(function(){
- const intro=document.getElementById('intro');const btn=document.getElementById('enterBtn');
- function enter(){intro.classList.add('hide');document.body.classList.remove('locked');setTimeout(()=>{try{video.pause()}catch(e){} intro.remove()},1050);window.scrollTo(0,0)}
- btn.addEventListener('click',enter); 
- const target=new Date('2026-09-11T19:30:00-04:00').getTime();
- function tick(){let d=Math.max(0,target-Date.now());document.getElementById('days').textContent=Math.floor(d/86400000);document.getElementById('hours').textContent=Math.floor(d%86400000/3600000);document.getElementById('minutes').textContent=Math.floor(d%3600000/60000);document.getElementById('seconds').textContent=Math.floor(d%60000/1000)}
- tick();setInterval(tick,1000);
+(function () {
+  const intro = document.getElementById("intro");
+  const video = document.getElementById("openingVideo");
+  const playButton = document.getElementById("playIntroBtn");
+  const skipButton = document.getElementById("enterBtn");
+
+  function enterWonderland() {
+    intro.classList.add("hide");
+    document.body.classList.remove("locked");
+
+    setTimeout(function () {
+      video.pause();
+      intro.remove();
+    }, 1000);
+
+    window.scrollTo(0, 0);
+  }
+
+  function startVideo() {
+    video.play()
+      .then(function () {
+        playButton.style.display = "none";
+      })
+      .catch(function () {
+        playButton.style.display = "inline-flex";
+      });
+  }
+
+  playButton.addEventListener("click", startVideo);
+  skipButton.addEventListener("click", enterWonderland);
+  video.addEventListener("ended", enterWonderland);
+
+  startVideo();
+
+  const target = new Date("2026-09-11T19:30:00-04:00").getTime();
+
+  function tick() {
+    const remaining = Math.max(0, target - Date.now());
+
+    document.getElementById("days").textContent =
+      Math.floor(remaining / 86400000);
+
+    document.getElementById("hours").textContent =
+      Math.floor((remaining % 86400000) / 3600000);
+
+    document.getElementById("minutes").textContent =
+      Math.floor((remaining % 3600000) / 60000);
+
+    document.getElementById("seconds").textContent =
+      Math.floor((remaining % 60000) / 1000);
+  }
+
+  tick();
+  setInterval(tick, 1000);
 })();
 </script>
 </body>
