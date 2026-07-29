@@ -56,6 +56,43 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
   position: relative;
   z-index: 2;
 }
+  .intro-small {
+  margin: 0 0 10px;
+  color: #fff4dc;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.intro-text {
+  margin: 12px 0 24px;
+  color: #fff4dc;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@keyframes invitationGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 8px rgba(212, 175, 55, 0.4),
+      0 0 18px rgba(212, 175, 55, 0.18);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow:
+      0 0 18px rgba(255, 220, 130, 0.95),
+      0 0 38px rgba(212, 175, 55, 0.55);
+    transform: scale(1.03);
+  }
+}
+
+#enterBtn {
+  animation: invitationGlow 2.8s ease-in-out infinite;
+}
 </style>
 </head>
 <body class="locked">
