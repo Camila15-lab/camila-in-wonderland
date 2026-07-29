@@ -43,7 +43,7 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   background: #050b08;
   z-index: 1;
@@ -111,32 +111,20 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
   pointer-events: none;
 }
 
-#playIntroBtn {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  pointer-events: auto;
-  animation: invitationGlow 2.8s ease-in-out infinite;
-}
 
 .skip-intro {
-    position: absolute;
-    left: 50%;
-    bottom: 5%;
-    transform: translateX(-50%);
-    padding: 14px 30px;
-    border: 2px solid #d9b85f;
-    border-radius: 999px;
-    background: rgba(64, 8, 24, 0.90);
-    color: #fff4dc;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(18px, 2vw, 24px);
-    letter-spacing: .06em;
-    cursor: pointer;
-    pointer-events: auto;
-    animation: invitationGlow 2.8s ease-in-out infinite;
+  position: absolute;
+  left: 82%;
+  top: 84%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 72px;
+  border: none;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 4;
 }
 </style>
 </head>
@@ -149,10 +137,7 @@ footer{background:#07140e;color:#e8dfc8;text-align:center;padding:38px 20px;font
 >
  <div class="intro-copy">
   <button class="skip-intro" id="enterBtn" type="button">
-  Continue the Journey
-</button>
- <button class="skip-intro" id="enterBtn" type="button">
-    Enter Wonderland
+  Begin the Journey
 </button>
 </div>
 </div>
